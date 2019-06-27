@@ -1,35 +1,40 @@
 package analisadorLexico;
 
+import java.util.ArrayList;
+
 public class Tag {
-	No info[];
+	ArrayList<No> listaNos = new ArrayList();
 	String nome;
 	
-	public Tag(String entrada) {
-		int tam = entrada.length();
-		for(int i = 0; i <tam; i++) {
-			info[i] = new No(entrada.charAt(i));
-		}
+	public Tag() {
+		
 	}
 	
-	public No[] getInfo() {
-		return info;
+	public void insereNo(No aux) {
+		this.listaNos.add(aux);
+	}
+	
+	public ArrayList<No> getInfo() {
+		return listaNos;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
 	
-	public void setInfo(No[] info) {
-		this.info = info;
+	public void setListaNos(ArrayList<No> listaNos) {
+		this.listaNos = listaNos;
 	}
 	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+	
+	public void imprimeTag() {
+		for(int i = 0; i< listaNos.size(); i++) {
+			System.out.print(listaNos.get(i).getCampo());
+		}
+		
 	}
 }
