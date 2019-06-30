@@ -44,7 +44,7 @@ public class Automato {
 	            this.getFinais().add(a2.getTransicoes().get(i).getDestino());
 	        }
 	                         
-	        System.out.println(this);      
+	        //System.out.println(this);      
 	            
 	    }
 	    
@@ -64,7 +64,7 @@ public class Automato {
 	            
 	                 
 	       } 
-	        System.out.println(this);
+	        //System.out.println(this);
 	    }
 	    
 	    public void fechoKleen(Automato a3)
@@ -85,7 +85,7 @@ public class Automato {
 	            }
 	        //}   
 	        
-	        System.out.println(a3);
+	        //System.out.println(a3);
 	    }
 	    public static Automato automatoAuxiliar()
 	    {
@@ -171,10 +171,5 @@ public class Automato {
 	    public void setAtual(Estado atual) {
 	        this.atual = atual;
 	    }
-	    
-	   @Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
+	   
 }
