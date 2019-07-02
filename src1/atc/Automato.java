@@ -1,4 +1,4 @@
-package analisadorLexico;
+package atc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class Automato {
    
     
        
-    //Operaï¿½ï¿½o +
+    //Operação +
     public void construirAuto(Automato a1, Automato a2 )
     {
         pilhaAuto.push(a1);
@@ -54,7 +54,7 @@ public class Automato {
             
     }
     
-    //Funï¿½ï¿½o para concatenar autï¿½matos
+    //Função para concatenar autômatos
     public void concatenaAuto(Automato a1, Automato a2)
     {
         for(int i=0;i<a1.transicoes.size();i++)
@@ -75,7 +75,7 @@ public class Automato {
     
     public void fechoKleen(Automato a3)
     {
-        /*Para operaï¿½ï¿½o +
+        /*Para operação +
         if(a3.getFinais().size()>1)
         {
             for(int i=0;i<a3.getFinais().size();i++)
@@ -83,11 +83,11 @@ public class Automato {
                 a3.transicoes.add(new Transicao(a3.transicoes.get(i).getDestino(),a3.transicoes.get(i).getOrigem() ,'n'));
             }
             
-        }else //Para operaï¿½ï¿½o .
+        }else //Para operação .
         {*/
              for(int i=0;i<a3.getFinais().size();i++)
             {
-                a3.transicoes.add(new Transicao(a3.getFinais().get(i),a3.inicial ,'*'));//Repassei n como se nï¿½o consumisse nada, podemos trocar isso 
+                a3.transicoes.add(new Transicao(a3.getFinais().get(i),a3.inicial ,'*'));//Repassei n como se não consumisse nada, podemos trocar isso 
             }
         //}   
         

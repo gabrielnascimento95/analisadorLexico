@@ -1,4 +1,6 @@
-package analisadorLexico;
+
+package atc;
+
 /**
  *
  * @author Rian Alves
