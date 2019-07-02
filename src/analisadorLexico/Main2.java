@@ -7,6 +7,7 @@ public class Main2 {
 
 	public static void main(String[] args) {
 		List<Automato> automatos = AutomatoDAO.getInstance();
+		List<Tag> tags = TagDAO.getInstance();
 		String entradaUser; //"ab+c.*"; //ab.c.* // ab.*
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Digite uma tag: ");
@@ -45,18 +46,19 @@ public class Main2 {
 					break;
 				}
 			}else if(entradaForChar[i] == '*') {
-				Automato a = pilhaAuto.pop();
-				//Automato c = pilhaAuto.pop();
-				Automato b = new Automato();
-				b = a;
-				b.fechoKleen(a);
-				pilhaAuto.push(b);
+				if(pilhaTag.size() >= 1) {
+					String a = (String) pilhaTag.pop();
+					pilhaTag.push(a+"*");
+				}else {
+					System.out.print("erro");
+					break;
+				}
 			}
 		}
 		
 		
-		
-		
+		// colocar uma flag para indicar se a tag é valida ou não 
+		// se valida, rodar o for abaixo
 		
 		
 		
